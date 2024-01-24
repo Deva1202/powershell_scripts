@@ -1,4 +1,0 @@
-Create a custom, graphical input box
-$form = New-Object System.Windows.Forms.Form
-$form.Text = 'Data Entry Form' $form.Size = New-Object System.Drawing.Size(300,200) $form.StartPosition = 'CenterScreen'
-
