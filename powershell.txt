@@ -1,0 +1,98 @@
+1.write-host is used for to write an data or info
+2.get-service
+3.$output = get-service
+4.$output | where-object {$_.status -eq 'stopped'}
+#here status is a row and stopped is an value
+5.Datatypes:string,constamt,datetime,boleean,string
+ex: $var = 1
+wite-host $var
+6.when we will pass the string into the single quotes it behaves like a string
+7.Identify the datatype is use GetType()
+8.we will pass the datatype before the variable
+ex:[float]$myvar=1.4
+write-host $myvar
+9.pass the array like $arr ='a','b','c'
+Arrays in powershell:
+
+$a=@('1','2','3','4')
+$a.gettype()
+
+synatx of for loop:
+
+*for($i=0 ,$i lt -1,$i++)
+
+#intialize 2 var and both variables representing
+
+for(($i =0), ($j = 0); $i - lt 10 -and $j -lt 10; $i++,$j++)
+{ 
+	"$i:$i"
+	"$j:$j"
+}
+
+for($i=0,$i -lt 3;$i++)
+{
+	'script will be' $serverlist[i]
+Test-connection $serverlist[$i]
+}
+
+#foreach loop is also used for the conditions
+
+foreach($server in $serverlist)
+{
+write-host 'server name is:'$server
+}
+
+C:\Users\vdevarajulu
+
+
+#we have to get the content from the path write get-content path
+
+
+Conditional statements:
+
+if($x -eq 30){
+...........
+..........
+}
+else{
+...............
+}
+
+
+Comparison operators:It is used for compare the two values
+
+They are diff operators like:
+Equality,matching,contaminent,Replacement operators,Type comaprison operator
+
+
+
+
+note:
+1.How to create the set like key and value in powershell those are pscustomoperator and hash table
+ex:
+$myObject = [PSCustomObject]@{
+    Name     = 'Kevin'
+    Language = 'PowerShell'
+    State    = 'Texas'
+}
+
+
+#note: Ccoperator can checks the case sensitive values into any condition
+By default, -contains does a case-insensitive match. If you want to perform a case-sensitive search, use the -CContains operator. E.g. In the below example, the -CContains operator checks whether the test value exists in the collection considering its case:
+#Array
+$Fruits = "apple", "banana", "mango"
+ 
+#Check if array contains a string
+$Fruits -CContains "Banana"
+
+#PowerShell Contains with Where-Object
+$array = @("The quick brown fox", "Jumped over the lazy dog", "Hello world")	
+$array | Where-Object { $_.Contains("quick") }
+
+while and do-while loop:
+
+1.$BFE_STATUS = Get-Service | Where-Object {$_.Name -eq 'BFE'}
+
+
+Note: when you have to be import the module it shows the restricted error then you have to be set the form through the command in powershell
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted 
